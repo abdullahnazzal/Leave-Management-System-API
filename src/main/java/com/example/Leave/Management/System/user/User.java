@@ -51,11 +51,13 @@ public class User {
     @Column(name = "staff", nullable = false, columnDefinition = "TEXT")
     private String staff;
 
+    @Column(name = "img_url", nullable = false, columnDefinition = "TEXT")
+    private String imgURL;
+
     public User() {
     }
 
-    public User(Long id, String userName, String firstName, String lastName, String email, String password,
-            String staff) {
+    public User(Long id, String userName, String firstName, String lastName, String email, String password, String staff, String imgURL) {
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
@@ -63,15 +65,17 @@ public class User {
         this.email = email;
         this.password = password;
         this.staff = staff;
+        this.imgURL = imgURL;
     }
 
-    public User(String userName, String firstName, String lastName, String email, String password, String staff) {
+    public User(String userName, String firstName, String lastName, String email, String password, String staff, String imgURL) {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.staff = staff;
+        this.imgURL = imgURL;
     }
 
     public Long getId() {
@@ -130,17 +134,28 @@ public class User {
         this.staff = staff;
     }
 
+    public String getImgURL() {
+        return this.imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
+    }
+
+
     @Override
     public String toString() {
         return "{" +
-                " id='" + getId() + "'" +
-                ", userName='" + getUserName() + "'" +
-                ", firstName='" + getFirstName() + "'" +
-                ", lastName='" + getLastName() + "'" +
-                ", email='" + getEmail() + "'" +
-                ", password='" + getPassword() + "'" +
-                ", staff='" + getStaff() + "'" +
-                "}";
+            " id='" + getId() + "'" +
+            ", userName='" + getUserName() + "'" +
+            ", firstName='" + getFirstName() + "'" +
+            ", lastName='" + getLastName() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", password='" + getPassword() + "'" +
+            ", staff='" + getStaff() + "'" +
+            ", imgURL='" + getImgURL() + "'" +
+            "}";
     }
+    
 
 }

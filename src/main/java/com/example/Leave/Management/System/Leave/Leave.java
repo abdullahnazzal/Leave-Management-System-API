@@ -72,7 +72,7 @@ public class Leave {
     private User userId;
 
     @ManyToOne
-    @JoinColumn(name = "user_result_id", referencedColumnName = "id")
+    @JoinColumn(name = "manger_id", referencedColumnName = "id")
     
     private User mangerId;
 
