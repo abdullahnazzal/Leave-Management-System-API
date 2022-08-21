@@ -25,7 +25,7 @@ public class LeaveController {
     }
 
     // EndPoint For Get All Leave
-    // http://localhost:8080/api/v1/leave
+    // http://localhost:8080/api/v1/leave/all
     @GetMapping(path = "/all")
     public List<Leave> getLeaves() {
         return leaveService.getLeaves();
@@ -39,7 +39,7 @@ public class LeaveController {
     }
 
     // EndPoint For Get All Leave By Filter
-    // http://localhost:8080/api/v1/leave/?status=APPROVED
+    // http://localhost:8080/api/v1/leave/?userId=1&status=1
     @GetMapping(path = "/")
     public List<Leave> getLeavesByStatus(
         @RequestParam(name = "status",required = false) Integer status,
